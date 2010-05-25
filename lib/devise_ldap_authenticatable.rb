@@ -29,6 +29,16 @@ module Devise
   # Add valid users to database
   mattr_accessor :ldap_create_user
   @@ldap_create_user = false
+
+  # Active Directory 
+  mattr_accessor :active_directory
+  @@active_directory = false
+
+  mattr_accessor :auth_user
+  @@auth_user = nil
+
+  mattr_accessor :auth_password
+  @@auth_password = nil
 end
 
 # Add ldap_authenticatable strategy to defaults.
