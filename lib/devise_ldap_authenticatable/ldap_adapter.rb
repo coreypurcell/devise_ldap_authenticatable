@@ -15,7 +15,7 @@ module Devise
       ldap.host = ::Devise.ldap_host
       ldap.port = ::Devise.ldap_port
       if ::Devise.active_directory
-        ldap.authenticate(::Devise.auth_user, ::Devise:auth_password)
+        ldap.authenticate(::Devise.auth_user, ::Devise.auth_password)
         if ldap.bind_as(:base => ::Devise.ldap_base_dn, 
                      :password => password, 
                      :filter => Net::LDAP::Filter.eq('sAMAccountName',login))
