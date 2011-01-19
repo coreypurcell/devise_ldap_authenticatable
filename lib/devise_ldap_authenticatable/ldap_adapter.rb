@@ -21,6 +21,7 @@ module Devise
                      :filter => Net::LDAP::Filter.eq('sAMAccountName',login))
           true
         else
+          Rails.logger.error "\n##### FAILED LOGIN #####\n#{ldap.get_operation_result.message}\n\n"
           false
         end
       else
@@ -29,7 +30,7 @@ module Devise
         if ldap.bind
           true
         else
-          # errors.add_to_base(ldap.get_operation_result.message)
+          Rails.logger.error ldap.get_operation_result.message
           false
         end
       end
