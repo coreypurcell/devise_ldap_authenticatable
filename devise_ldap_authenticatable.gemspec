@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "devise_ldap_authenticatable/version"
 
 Gem::Specification.new do |s|
   s.name        = "devise_ldap_authenticatable"
